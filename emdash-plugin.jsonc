@@ -21,5 +21,8 @@
     "shifts": { "indexes": [["status", "startedAt"]] }
   },
   "admin": { "pages": [{ "path": "/checklists", "label": "Shift checklists", "icon": "check" }] },
-  "release": { "requires": { "env:emdash": ">=1.4.0 <2.0.0" } }
+  "release": {
+    "requires": { "env:emdash": ">=1.4.0 <2.0.0" },
+    "artifacts": { "icon": { "file": "./assets/icon.png" } }
+  }
 }
