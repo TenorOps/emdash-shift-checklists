@@ -1,10 +1,10 @@
-import { defineConfig } from "@playwright/test";
+import type { PlaywrightTestConfig } from "@playwright/test";
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
 const timingReporter = fileURLToPath(new URL("../../tests/e2e-runtime/timing-reporter.ts", import.meta.url));
 
-export default defineConfig({
+export default {
   testDir: "./e2e",
   testMatch: "**/*.spec.ts",
   workers: 1,
@@ -18,4 +18,4 @@ export default defineConfig({
     timeout: 180_000,
     reuseExistingServer: false,
   },
-});
+} satisfies PlaywrightTestConfig;

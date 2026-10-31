@@ -1,4 +1,8 @@
-import { expect, test } from "@playwright/test";
+import { createRequire } from "node:module";
+import { resolve } from "node:path";
+
+// Use the runner's Playwright instance in both the monorepo and a standalone checkout.
+const { expect, test } = createRequire(resolve(process.cwd(), "package.json"))("@playwright/test") as typeof import("@playwright/test");
 
 test("a restaurant operator creates, edits and completes a shift, then reviews it after archiving", async ({ page, browser }) => {
   const name = `Morning ${Date.now()}`;
