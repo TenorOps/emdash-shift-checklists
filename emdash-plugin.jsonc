@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/@emdash-cms/plugin-cli/schemas/emdash-plugin.schema.json",
+  "slug": "restaurant-shift-checklists",
+  "repo": "https://github.com/TenorOps/emdash-shift-checklists",
+  "publisher": "did:plc:5z3cihhkap6hvoigcqtkrhd4",
+  "license": "MIT",
+  "author": { "name": "TenorOps", "url": "https://tenorops.com" },
+  "security": { "email": "hello@tenorops.com" },
+  "name": "Restaurant Opening & Closing Checklists",
+  "description": "Create checklists for restaurant shifts, record completed tasks, and review past shifts.",
+  "keywords": ["restaurant", "checklist", "opening", "closing", "operations"],
+  "sections": {
+    "description": "Create reusable checklists for each location and shift. Start a checklist when work begins, mark tasks as they are completed, and review previous shifts. Your data stays on your EmDash site. A TenorOps account is not required.",
+    "installation": "Install the plugin from the EmDash registry, then open Shift checklists in the admin navigation.",
+    "security": "Checklist and shift records are stored on your EmDash site. The plugin does not send them to TenorOps.\n\nThese templates are examples. Your team is responsible for choosing tasks that suit your operation and local requirements."
+  },
+  "capabilities": [],
+  "allowedHosts": [],
+  "storage": {
+    "checklists": { "indexes": ["archived"] },
+    "shifts": { "indexes": [["status", "startedAt"]] }
+  },
+  "admin": { "pages": [{ "path": "/checklists", "label": "Shift checklists", "icon": "check" }] },
+  "release": { "requires": { "env:emdash": ">=1.4.0 <2.0.0" } }
+}
