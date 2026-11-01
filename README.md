@@ -6,9 +6,13 @@ Install the plugin from the EmDash registry, then open **Shift checklists** in t
 
 The registry listing credits [TenorOps](https://tenorops.com). Report security issues to hello@tenorops.com.
 
+See the [usage guide](docs/usage.md) for checklist workflows and permissions.
+
 ## Development
 
 Install dependencies with `bun install`, then run `bun run validate`, `bun run typecheck`, `bun run test`, and `bun run bundle`. To run the browser journey, install Chromium with `bunx playwright install chromium` and run `bunx playwright test --config playwright.config.ts`. The browser test creates a disposable EmDash site under `.cache/` and resets its local test database. It requires Node.js 24 and Bun.
+
+See [development and releases](docs/development.md) for test and publishing details.
 
 ## License
 
